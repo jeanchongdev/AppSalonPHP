@@ -1,0 +1,15 @@
+.seccion {
+    padding: 5rem 0;
+    display: none; // para que no se muestre el div
+
+    .text-center {
+        text-align: center;
+    }
+}
+
+.mostrar {
+    display: block; // para que no se muestre el div
+}
+.ocultar {
+    display: none; // para que no se muestre el div
+}

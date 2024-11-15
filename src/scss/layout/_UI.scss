@@ -1,0 +1,84 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet {
+        display: grid; //para hacer dos columnas
+        grid-template-columns: repeat(2, 1fr); //mitad de ambos lado izquierdo y derecha de la pantalla
+        min-height: 100vh; // des esta manera tendremos dos columnas que ocupan todo el alto de la pantalla
+    }
+
+    .imagen {
+        height: 20rem; //para darle una altura
+        background-image: url(../img/1.jpg); //para darle una imagen
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet { 
+            height: auto; //para darle una altura
+        }
+    }
+
+    .app {
+        width: 95%; //para darle una anchura
+        margin: 0 auto; //para darle una margen
+        padding: 3rem 0;
+        @include m.tablet {
+            overflow: scroll;
+            
+            // Estilo para navegadores que soportan ::-webkit-scrollbar
+            &::-webkit-scrollbar {
+            width: 12px; // Ancho del scroll vertical
+            height: 12px; // Ancho del scroll horizontal
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #1a1b15; // Color del thumb (parte móvil)
+                border-radius: 10px; // Redondeado
+                border: 3px solid transparent; // Espacio alrededor
+                background-clip: padding-box; // Para evitar que el borde recorte el thumb
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: #a9a9a9; // Cambia de color al pasar el mouse
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: #000000; // Fondo del track
+                border-radius: 10px; // Redondeado
+            }
+
+            // Estilo adicional para navegadores que soportan scrollbar-color
+            scrollbar-color: #1a1b15 #1a1b15; // Thumb y track
+            scrollbar-width: thin; // Reduce el ancho del scroll
+
+        }
+    }
+}
+
+.barra {
+    margin: v.$separacion 0;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    .boton {
+        @include m.boton(v.$negro, v.$blanco);
+        margin: 0;
+    }
+}
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton {
+        margin: 0 0 1rem 0;
+    }
+}

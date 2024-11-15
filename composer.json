@@ -1,0 +1,23 @@
+{
+    "name": "grare/app-salon_php_mvc_js_sass",
+    "description": "Proyecto php 8,MVC,SQL,SASS,Gulp",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Grare\\AppSalonPhpMvcJsSass\\": "src/",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jean Pierre Chong"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
